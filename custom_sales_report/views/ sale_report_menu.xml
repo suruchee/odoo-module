@@ -1,0 +1,5 @@
+<odoo>
+    <data>
+        <menuitem id="menu_sale_report" name="Sales Report" parent="sale.menu_sale_report" groups="base.group_sale_manager"/>
+    </data>
+</odoo>

@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <template id="sales_report_template" inherit_id="report.external_layout_standard">
+            <xpath expr="//div[@class='page']" position="inside">
+                <!-- Customize the report template layout according to the desired format -->
+                <div>
+                    <h2>Sales Report of <span t-field="doc.customer.name"/></h2>
+                    <p>From <span t-field="data['form']['from_date']"/> to <span t-field="data['form']['to_date']"/></p>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Source</th>
+                                <th>Invoice No</th>
+                                <th>Invoice Date</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Rate</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="doc.lines" t-as="line">
+                                <td><span t-esc="line.sequence"/></td>
+                                <td><span t-esc="line.source"/></td>
+                                <td><span t-esc="line.invoice_no"/></td>
+                                <td><span t-esc="line.invoice_date"/></td>
+                                <td><span t-esc="line.product"/></td>
+                                <td><span t-esc="line.quantity"/></td>
+                                <td><span t-esc="line.rate"/></td>
+                                <td><span t-esc="line.total"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Total Amount: <span t-esc="doc.total_amount"/></p>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

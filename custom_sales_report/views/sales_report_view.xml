@@ -1,0 +1,21 @@
+<openerp>
+    <data>
+        <record id="view_sales_report_wizard_form" model="ir.ui.view">
+            <field name="name">sales.report.wizard.form</field>
+            <field name="model">sales.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Sales Report Wizard">
+                    <group>
+                        <field name="from_date"/>
+                        <field name="to_date"/>
+                        <field name="customer"/>
+                    </group>
+                    <footer>
+                        <button name="generate_report" string="Generate Report" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>
